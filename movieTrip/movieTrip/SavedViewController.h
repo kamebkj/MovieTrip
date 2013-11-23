@@ -8,6 +8,5 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SavedViewController : UIViewController
-
+@interface SavedViewController : UITableViewController
 @end
