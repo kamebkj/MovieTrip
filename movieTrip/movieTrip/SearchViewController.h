@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  SearchViewController.h
 //  movieTrip
 //
 //  Created by Kate Hsiao on 11/19/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
+@interface SearchViewController : UIViewController
 
 @end

@@ -17,12 +17,18 @@
 		7E1294BF183C33A300570C8B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E1294BE183C33A300570C8B /* Default@2x.png */; };
 		7E1294C1183C33A300570C8B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E1294C0183C33A300570C8B /* Default-568h@2x.png */; };
 		7E1294C4183C33A300570C8B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E1294C2183C33A300570C8B /* MainStoryboard.storyboard */; };
-		7E1294C7183C33A300570C8B /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1294C6183C33A300570C8B /* FirstViewController.m */; };
 		7E1294C9183C33A300570C8B /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E1294C8183C33A300570C8B /* first.png */; };
 		7E1294CB183C33A300570C8B /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E1294CA183C33A300570C8B /* first@2x.png */; };
-		7E1294CE183C33A300570C8B /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1294CD183C33A300570C8B /* SecondViewController.m */; };
+		7E1294CE183C33A300570C8B /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1294CD183C33A300570C8B /* SearchViewController.m */; };
 		7E1294D0183C33A300570C8B /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E1294CF183C33A300570C8B /* second.png */; };
 		7E1294D2183C33A300570C8B /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E1294D1183C33A300570C8B /* second@2x.png */; };
+		7E1294DA183C349300570C8B /* SavedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1294D9183C349300570C8B /* SavedViewController.m */; };
+		7E1294DD183C358800570C8B /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1294DC183C358800570C8B /* MeViewController.m */; };
+		7E1294E2183C38AA00570C8B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1294E1183C38AA00570C8B /* MapKit.framework */; };
+		7E1294E5183C399A00570C8B /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1294E4183C399A00570C8B /* MapViewController.m */; };
+		7E1294EC183C430700570C8B /* campanile.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E1294EB183C430700570C8B /* campanile.jpg */; };
+		7E1295051840148800570C8B /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1295031840148800570C8B /* LocationViewController.m */; };
+		7E1295061840148800570C8B /* LocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E1295041840148800570C8B /* LocationViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,14 +46,23 @@
 		7E1294BE183C33A300570C8B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		7E1294C0183C33A300570C8B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		7E1294C3183C33A300570C8B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		7E1294C5183C33A300570C8B /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		7E1294C6183C33A300570C8B /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		7E1294C8183C33A300570C8B /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		7E1294CA183C33A300570C8B /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		7E1294CC183C33A300570C8B /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		7E1294CD183C33A300570C8B /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		7E1294CC183C33A300570C8B /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		7E1294CD183C33A300570C8B /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		7E1294CF183C33A300570C8B /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		7E1294D1183C33A300570C8B /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		7E1294D8183C349300570C8B /* SavedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavedViewController.h; sourceTree = "<group>"; };
+		7E1294D9183C349300570C8B /* SavedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavedViewController.m; sourceTree = "<group>"; };
+		7E1294DB183C358800570C8B /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
+		7E1294DC183C358800570C8B /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
+		7E1294E1183C38AA00570C8B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		7E1294E3183C399A00570C8B /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		7E1294E4183C399A00570C8B /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		7E1294EB183C430700570C8B /* campanile.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = campanile.jpg; sourceTree = "<group>"; };
+		7E1295021840148800570C8B /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationViewController.h; path = ../LocationViewController.h; sourceTree = "<group>"; };
+		7E1295031840148800570C8B /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationViewController.m; path = ../LocationViewController.m; sourceTree = "<group>"; };
+		7E1295041840148800570C8B /* LocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LocationViewController.xib; path = ../LocationViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E1294E2183C38AA00570C8B /* MapKit.framework in Frameworks */,
 				7E1294AB183C33A300570C8B /* UIKit.framework in Frameworks */,
 				7E1294AD183C33A300570C8B /* Foundation.framework in Frameworks */,
 				7E1294AF183C33A300570C8B /* CoreGraphics.framework in Frameworks */,
@@ -67,6 +83,7 @@
 		7E12949E183C33A300570C8B = {
 			isa = PBXGroup;
 			children = (
+				7E1294E1183C38AA00570C8B /* MapKit.framework */,
 				7E1294B0183C33A300570C8B /* movieTrip */,
 				7E1294A9183C33A300570C8B /* Frameworks */,
 				7E1294A8183C33A300570C8B /* Products */,
@@ -97,12 +114,19 @@
 				7E1294B9183C33A300570C8B /* AppDelegate.h */,
 				7E1294BA183C33A300570C8B /* AppDelegate.m */,
 				7E1294C2183C33A300570C8B /* MainStoryboard.storyboard */,
-				7E1294C5183C33A300570C8B /* FirstViewController.h */,
-				7E1294C6183C33A300570C8B /* FirstViewController.m */,
+				7E1295021840148800570C8B /* LocationViewController.h */,
+				7E1295031840148800570C8B /* LocationViewController.m */,
+				7E1295041840148800570C8B /* LocationViewController.xib */,
+				7E1294E3183C399A00570C8B /* MapViewController.h */,
+				7E1294E4183C399A00570C8B /* MapViewController.m */,
+				7E1294CC183C33A300570C8B /* SearchViewController.h */,
+				7E1294CD183C33A300570C8B /* SearchViewController.m */,
+				7E1294D8183C349300570C8B /* SavedViewController.h */,
+				7E1294D9183C349300570C8B /* SavedViewController.m */,
+				7E1294DB183C358800570C8B /* MeViewController.h */,
+				7E1294DC183C358800570C8B /* MeViewController.m */,
 				7E1294C8183C33A300570C8B /* first.png */,
 				7E1294CA183C33A300570C8B /* first@2x.png */,
-				7E1294CC183C33A300570C8B /* SecondViewController.h */,
-				7E1294CD183C33A300570C8B /* SecondViewController.m */,
 				7E1294CF183C33A300570C8B /* second.png */,
 				7E1294D1183C33A300570C8B /* second@2x.png */,
 				7E1294B1183C33A300570C8B /* Supporting Files */,
@@ -113,6 +137,7 @@
 		7E1294B1183C33A300570C8B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7E1294EB183C430700570C8B /* campanile.jpg */,
 				7E1294B2183C33A300570C8B /* movieTrip-Info.plist */,
 				7E1294B3183C33A300570C8B /* InfoPlist.strings */,
 				7E1294B6183C33A300570C8B /* main.m */,
@@ -184,6 +209,8 @@
 				7E1294CB183C33A300570C8B /* first@2x.png in Resources */,
 				7E1294D0183C33A300570C8B /* second.png in Resources */,
 				7E1294D2183C33A300570C8B /* second@2x.png in Resources */,
+				7E1294EC183C430700570C8B /* campanile.jpg in Resources */,
+				7E1295061840148800570C8B /* LocationViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,8 +223,11 @@
 			files = (
 				7E1294B7183C33A300570C8B /* main.m in Sources */,
 				7E1294BB183C33A300570C8B /* AppDelegate.m in Sources */,
-				7E1294C7183C33A300570C8B /* FirstViewController.m in Sources */,
-				7E1294CE183C33A300570C8B /* SecondViewController.m in Sources */,
+				7E1294CE183C33A300570C8B /* SearchViewController.m in Sources */,
+				7E1294DA183C349300570C8B /* SavedViewController.m in Sources */,
+				7E1294DD183C358800570C8B /* MeViewController.m in Sources */,
+				7E1294E5183C399A00570C8B /* MapViewController.m in Sources */,
+				7E1295051840148800570C8B /* LocationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

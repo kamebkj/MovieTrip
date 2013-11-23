@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  MeViewController.h
 //  movieTrip
 //
 //  Created by Kate Hsiao on 11/19/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@interface MeViewController : UIViewController
 
 @end

@@ -1,18 +1,18 @@
 //
-//  SecondViewController.m
+//  SearchViewController.m
 //  movieTrip
 //
 //  Created by Kate Hsiao on 11/19/13.
 //  Copyright (c) 2013 Kate Hsiao. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "SearchViewController.h"
 
-@interface SecondViewController ()
+@interface SearchViewController ()
 
 @end
 
-@implementation SecondViewController
+@implementation SearchViewController
 
 - (void)viewDidLoad
 {
