@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
-@interface MapViewController : UIViewController <MKMapViewDelegate, MKAnnotation>
+@interface MapViewController : UIViewController <MKMapViewDelegate, MKAnnotation> {
+    Boolean didDrawAnnotation;
+}
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 

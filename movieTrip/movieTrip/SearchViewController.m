@@ -26,4 +26,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - UISearchDisplayController
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
+    NSLog(@"%@", searchString);
+    
+    return YES;
+}
+
 @end

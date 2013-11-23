@@ -56,6 +56,7 @@
 //    else if (section==1) return @"buttons";
 //    else return @"movies";
     if (section==2) return @"Movies shot here";
+    else return @"";
 }
 
 

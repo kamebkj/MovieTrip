@@ -30,7 +30,22 @@
 {
     [super viewDidLoad];
 	self.mapView.delegate = self;
+    didDrawAnnotation = false;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    CLLocationCoordinate2D location = [[[self.mapView userLocation] location] coordinate];
+    NSLog(@"Location found from Map: %f %f",location.latitude,location.longitude);
     
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location, 800, 800);
+    [self.mapView setRegion:[self.mapView regionThatFits:region] animated:NO];
+    
+    // GET data, give paras of location & ?
+    // if success, then draw annotation
+    if (!didDrawAnnotation) [self drawAnnotation];
+}
+
+- (void)drawAnnotation {
     // Add an annotation
     CLLocationCoordinate2D coord;
     coord.latitude = 37.872057;
@@ -42,14 +57,16 @@
     point.subtitle = @"I'm here!!!";
     
     [self.mapView addAnnotation:point];
+    
+    didDrawAnnotation = true;
 }
 
 
-- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
-{
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 800, 800);
-    [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
-}
+//- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+//{
+//    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 800, 800);
+//    [self.mapView setRegion:[self.mapView regionThatFits:region] animated:NO];
+//}
 
 - (MKAnnotationView*)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
 
