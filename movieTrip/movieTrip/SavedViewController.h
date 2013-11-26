@@ -8,5 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SavedViewController : UITableViewController
+@interface SavedViewController : UITableViewController {
+    NSMutableArray *savedArray;
+}
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *editButton;
+
+- (IBAction)actionAdd:(UIBarButtonItem *)sender;
+- (IBAction)actionEdit:(UIBarButtonItem *)sender;
+
 @end

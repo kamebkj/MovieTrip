@@ -8,6 +8,9 @@
 
 #import "MapViewController.h"
 #import "LocationViewController.h"
+#import "AFNetworking.h"
+
+static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/weather_sample/";
 
 @interface MapViewController ()
 
@@ -42,7 +45,10 @@
     
     // GET data, give paras of location & ?
     // if success, then draw annotation
-    if (!didDrawAnnotation) [self drawAnnotation];
+    if (!didDrawAnnotation) {
+        //[self getNearbyData];
+    }
+        
 }
 
 - (void)drawAnnotation {
@@ -59,6 +65,24 @@
     [self.mapView addAnnotation:point];
     
     didDrawAnnotation = true;
+}
+
+- (void)getNearbyData {
+    NSString *weatherUrl = [NSString stringWithFormat:@"%@weather.php?format=json", BaseURLString];
+    NSURL *url = [NSURL URLWithString:weatherUrl];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    AFJSONRequestOperation *operation =
+    [AFJSONRequestOperation JSONRequestOperationWithRequest:request
+                                                    success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+                                                        NSLog(@"JSON: %@", JSON);
+                                                        [self drawAnnotation];
+                                                    }
+                                                    failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+                                                        NSLog(@"error");
+                                                    }
+     ];
+    [operation start];
 }
 
 
