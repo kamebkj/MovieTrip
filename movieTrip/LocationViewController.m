@@ -7,34 +7,34 @@
 //
 
 #import "LocationViewController.h"
+#import "AFNetworking.h"
+
+static NSString *const BaseURLString = @"http://people.ischool.berkeley.edu/~jthuang/i298/";
+
 
 @interface LocationViewController ()
 
 @end
 
 @implementation LocationViewController
+@synthesize locationId;
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+
+//- (id)initWithStyle:(UITableViewStyle)style
+//{
+//    self = [super initWithStyle:style];
+//    if (self) {
+//        // Custom initialization
+//    }
+//    return self;
+//}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    moviesShot = 5;
-    
+    [self getLocationData];
     selectedMovie = -1;
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,9 +52,6 @@
 }
 
 - (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-//    if (section==0) return @"title";
-//    else if (section==1) return @"buttons";
-//    else return @"movies";
     if (section==2) return @"Movies shot here";
     else return @"";
 }
@@ -63,7 +60,7 @@
 #pragma mark - Table cell
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section==2) return moviesShot*2;
+    if (section==2) return [moviesArray count]*2;
     else return 1;
 }
 
@@ -94,11 +91,11 @@
     }
     
     if (indexPath.section==0) {
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 150, 150)];
-        [imageView setImage:[UIImage imageNamed:@"campanile.jpg"]];
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 150)];
+        [imageView setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"https://mw2.google.com/mw-panoramio/photos/medium/17769178.jpg"]]]];
         
-        UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(170, 10, 150, 150)];
-        [textLabel setText:@"Sather Gate is a prominent landmark separating Sproul Plaza from the bridge over Strawberry Creek"];
+        UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, self.view.bounds.size.width, 50)];
+        [textLabel setText:locationName];
         [textLabel setLineBreakMode:NSLineBreakByWordWrapping];
         [textLabel setNumberOfLines:0];
         
@@ -122,10 +119,12 @@
     else {
         // Movies shot here
         if (indexPath.row%2==0) {
-            cell.textLabel.text = @"movieTitle";
+            cell.textLabel.text = [moviesArray[indexPath.row/2] objectForKey:@"Title"];
         }
         else {
-            cell.textLabel.text = @"some content";
+            cell.textLabel.text = [moviesArray[indexPath.row/2] objectForKey:@"Description"];
+            [cell.textLabel setLineBreakMode:NSLineBreakByWordWrapping];
+            [cell.textLabel setNumberOfLines:0];
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
             [cell setUserInteractionEnabled:NO];
         }
@@ -147,9 +146,9 @@
     
     // Animated to display the whole cell with scrolling
     
-//    [tableView scrollToNearestSelectedRowAtScrollPosition:UITableViewRowAnimationBottom animated:YES];
-//    [tableView setContentOffset:<#(CGPoint)#>]
-    [tableView reloadData];
+    //    [tableView scrollToNearestSelectedRowAtScrollPosition:UITableViewRowAnimationBottom animated:YES];
+    //    [tableView setContentOffset:<#(CGPoint)#>]
+    [self.tableView reloadData];
 }
 
 #pragma mark - Button click
@@ -160,6 +159,33 @@
 
 - (void)clickSave:(id)sender {
     NSLog(@"save");
+}
+
+#pragma mark - Get data
+
+- (void)getLocationData {
+    NSString *weatherUrl = [NSString stringWithFormat:@"%@location.php?id=%@", BaseURLString, locationId];
+    NSURL *url = [NSURL URLWithString:weatherUrl];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    AFJSONRequestOperation *operation =
+    [AFJSONRequestOperation JSONRequestOperationWithRequest:request
+                                                    success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+                                                        //                                                        locationObj = (NSDictionary*)JSON;
+                                                        [self setLocationData:(NSDictionary*)JSON];
+                                                    }
+                                                    failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+                                                        NSLog(@"error");
+                                                    }
+     ];
+    [operation start];
+}
+
+- (void)setLocationData:(NSDictionary*)locationDict {
+    locationName = [locationDict objectForKey:@"Description"];
+    moviesArray = (NSArray*) [locationDict objectForKey:@"Movies"];
+    
+    [self.tableView reloadData];
 }
 
 @end

@@ -9,8 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface LocationViewController : UITableViewController {
-    NSInteger moviesShot;
+    NSString *locationName;
+    NSArray *moviesArray;
     NSInteger selectedMovie;
+    
+    //    IBOutlet UITableView *tableViewOutlet;
 }
+
+@property (nonatomic, retain) NSString *locationId;
 
 @end

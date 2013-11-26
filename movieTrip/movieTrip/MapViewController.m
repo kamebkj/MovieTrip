@@ -9,8 +9,9 @@
 #import "MapViewController.h"
 #import "LocationViewController.h"
 #import "AFNetworking.h"
+#import "MyAnnotation.h"
 
-static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/weather_sample/";
+static NSString *const BaseURLString = @"http://people.ischool.berkeley.edu/~jthuang/i298/";
 
 @interface MapViewController ()
 
@@ -37,46 +38,53 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    CLLocationCoordinate2D location = [[[self.mapView userLocation] location] coordinate];
-    NSLog(@"Location found from Map: %f %f",location.latitude,location.longitude);
+    // Get user current location
+//    CLLocationCoordinate2D location = [[[self.mapView userLocation] location] coordinate];
+//    NSLog(@"Location found from Map: %f %f",location.latitude,location.longitude);
+    CLLocationCoordinate2D location;
+    location.latitude = 35.026267;
+    location.longitude = 135.751904;
     
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location, 800, 800);
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location, 1000000, 1000000);
     [self.mapView setRegion:[self.mapView regionThatFits:region] animated:NO];
     
     // GET data, give paras of location & ?
     // if success, then draw annotation
     if (!didDrawAnnotation) {
-        //[self getNearbyData];
+        [self getNearbyData];
     }
         
 }
 
-- (void)drawAnnotation {
-    // Add an annotation
-    CLLocationCoordinate2D coord;
-    coord.latitude = 37.872057;
-    coord.longitude = -122.257829;
+- (void)drawAnnotation:(NSArray*)points {
     
-    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
-    point.coordinate = coord;
-    point.title = @"Where am I?";
-    point.subtitle = @"I'm here!!!";
-    
-    [self.mapView addAnnotation:point];
+    for (int i=0; i<[points count]; i++) {
+        CLLocationCoordinate2D coord;
+        coord.latitude = [[points[i] objectForKey:@"Latitude"] doubleValue];
+        coord.longitude = [[points[i] objectForKey:@"Longitude"] doubleValue];
+        
+        MyAnnotation *point = [[MyAnnotation alloc] initWithLocation:coord];
+        point.title = [points[i] objectForKey:@"Description"];
+        point.pointId = [points[i] objectForKey:@"Location_Id"];
+//        MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+//        point.coordinate = coord;
+//        point.title = [points[i] objectForKey:@"Description"];
+
+        [self.mapView addAnnotation:point];
+    }
     
     didDrawAnnotation = true;
 }
 
 - (void)getNearbyData {
-    NSString *weatherUrl = [NSString stringWithFormat:@"%@weather.php?format=json", BaseURLString];
+    NSString *weatherUrl = [NSString stringWithFormat:@"%@nearby.php?lat=35.026267&lon=135.751904&dist=1000000&num=30", BaseURLString];
     NSURL *url = [NSURL URLWithString:weatherUrl];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     AFJSONRequestOperation *operation =
     [AFJSONRequestOperation JSONRequestOperationWithRequest:request
                                                     success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-                                                        NSLog(@"JSON: %@", JSON);
-                                                        [self drawAnnotation];
+                                                        [self drawAnnotation:(NSArray*)JSON];
                                                     }
                                                     failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
                                                         NSLog(@"error");
@@ -105,17 +113,24 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
     
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     [rightButton setTitle:annotation.title forState:UIControlStateNormal];
-    [rightButton addTarget:self action:@selector(showDetail:) forControlEvents:UIControlEventTouchUpInside];
+//    [rightButton addTarget:self action:@selector(showDetail:) forControlEvents:UIControlEventTouchUpInside];
     pinView.rightCalloutAccessoryView = rightButton;
     
     return pinView;
 }
 
-- (void)showDetail:(id)sender {
-    NSLog(@"bkj");
-//    LocationViewController *locationVC = [[LocationViewController alloc] init];
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
     LocationViewController *locationVC = [[LocationViewController alloc] initWithNibName:@"LocationViewController" bundle:nil];
+    MyAnnotation *ano = (MyAnnotation*)view.annotation;
+    locationVC.locationId = ano.pointId;
     [self.navigationController pushViewController:locationVC animated:YES];
+}
+
+
+
+- (void)showDetail:(id)sender {
+    
+    
 }
 
 - (void)didReceiveMemoryWarning

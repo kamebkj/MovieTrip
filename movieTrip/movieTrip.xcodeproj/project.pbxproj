@@ -27,8 +27,8 @@
 		7E1294E2183C38AA00570C8B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1294E1183C38AA00570C8B /* MapKit.framework */; };
 		7E1294E5183C399A00570C8B /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1294E4183C399A00570C8B /* MapViewController.m */; };
 		7E1294EC183C430700570C8B /* campanile.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E1294EB183C430700570C8B /* campanile.jpg */; };
-		7E1295051840148800570C8B /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1295031840148800570C8B /* LocationViewController.m */; };
-		7E1295061840148800570C8B /* LocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E1295041840148800570C8B /* LocationViewController.xib */; };
+		7E1E060F18455CDB006E5D0C /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1E060D18455CDB006E5D0C /* LocationViewController.m */; };
+		7E1E061018455CDB006E5D0C /* LocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E1E060E18455CDB006E5D0C /* LocationViewController.xib */; };
 		7E37B86118442EFC00C3643A /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E37B84F18442EFC00C3643A /* AFHTTPClient.m */; };
 		7E37B86218442EFC00C3643A /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E37B85118442EFC00C3643A /* AFHTTPRequestOperation.m */; };
 		7E37B86318442EFC00C3643A /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E37B85318442EFC00C3643A /* AFImageRequestOperation.m */; };
@@ -43,6 +43,7 @@
 		7E74A50F184456D4008A13B1 /* savedList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E74A50E184456D4008A13B1 /* savedList.plist */; };
 		7E74A51518445922008A13B1 /* SavedListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E74A51418445922008A13B1 /* SavedListViewController.m */; };
 		7E74A518184466D0008A13B1 /* AddTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E74A517184466D0008A13B1 /* AddTripViewController.m */; };
+		7EAA5F931845502500036F9F /* MyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA5F921845502500036F9F /* MyAnnotation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,9 +75,9 @@
 		7E1294E3183C399A00570C8B /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		7E1294E4183C399A00570C8B /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		7E1294EB183C430700570C8B /* campanile.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = campanile.jpg; sourceTree = "<group>"; };
-		7E1295021840148800570C8B /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationViewController.h; path = ../LocationViewController.h; sourceTree = "<group>"; };
-		7E1295031840148800570C8B /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationViewController.m; path = ../LocationViewController.m; sourceTree = "<group>"; };
-		7E1295041840148800570C8B /* LocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LocationViewController.xib; path = ../LocationViewController.xib; sourceTree = "<group>"; };
+		7E1E060C18455CDB006E5D0C /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationViewController.h; path = ../LocationViewController.h; sourceTree = "<group>"; };
+		7E1E060D18455CDB006E5D0C /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationViewController.m; path = ../LocationViewController.m; sourceTree = "<group>"; };
+		7E1E060E18455CDB006E5D0C /* LocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LocationViewController.xib; path = ../LocationViewController.xib; sourceTree = "<group>"; };
 		7E37B84E18442EFC00C3643A /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		7E37B84F18442EFC00C3643A /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		7E37B85018442EFC00C3643A /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -103,6 +104,8 @@
 		7E74A51418445922008A13B1 /* SavedListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SavedListViewController.m; path = ../SavedListViewController.m; sourceTree = "<group>"; };
 		7E74A516184466D0008A13B1 /* AddTripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTripViewController.h; sourceTree = "<group>"; };
 		7E74A517184466D0008A13B1 /* AddTripViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTripViewController.m; sourceTree = "<group>"; };
+		7EAA5F911845502500036F9F /* MyAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAnnotation.h; sourceTree = "<group>"; };
+		7EAA5F921845502500036F9F /* MyAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnnotation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,9 +164,11 @@
 				7E1294C2183C33A300570C8B /* MainStoryboard.storyboard */,
 				7E1294E3183C399A00570C8B /* MapViewController.h */,
 				7E1294E4183C399A00570C8B /* MapViewController.m */,
-				7E1295021840148800570C8B /* LocationViewController.h */,
-				7E1295031840148800570C8B /* LocationViewController.m */,
-				7E1295041840148800570C8B /* LocationViewController.xib */,
+				7EAA5F911845502500036F9F /* MyAnnotation.h */,
+				7EAA5F921845502500036F9F /* MyAnnotation.m */,
+				7E1E060C18455CDB006E5D0C /* LocationViewController.h */,
+				7E1E060D18455CDB006E5D0C /* LocationViewController.m */,
+				7E1E060E18455CDB006E5D0C /* LocationViewController.xib */,
 				7E1294CC183C33A300570C8B /* SearchViewController.h */,
 				7E1294CD183C33A300570C8B /* SearchViewController.m */,
 				7E74A519184466DD008A13B1 /* Saved */,
@@ -294,8 +299,8 @@
 				7E1294D0183C33A300570C8B /* second.png in Resources */,
 				7E1294D2183C33A300570C8B /* second@2x.png in Resources */,
 				7E1294EC183C430700570C8B /* campanile.jpg in Resources */,
-				7E1295061840148800570C8B /* LocationViewController.xib in Resources */,
 				7E74A50F184456D4008A13B1 /* savedList.plist in Resources */,
+				7E1E061018455CDB006E5D0C /* LocationViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,7 +317,6 @@
 				7E1294DA183C349300570C8B /* SavedViewController.m in Sources */,
 				7E1294DD183C358800570C8B /* MeViewController.m in Sources */,
 				7E1294E5183C399A00570C8B /* MapViewController.m in Sources */,
-				7E1295051840148800570C8B /* LocationViewController.m in Sources */,
 				7E37B86118442EFC00C3643A /* AFHTTPClient.m in Sources */,
 				7E37B86218442EFC00C3643A /* AFHTTPRequestOperation.m in Sources */,
 				7E37B86318442EFC00C3643A /* AFImageRequestOperation.m in Sources */,
@@ -324,6 +328,8 @@
 				7E37B86918442EFC00C3643A /* UIImageView+AFNetworking.m in Sources */,
 				7E74A51518445922008A13B1 /* SavedListViewController.m in Sources */,
 				7E74A518184466D0008A13B1 /* AddTripViewController.m in Sources */,
+				7EAA5F931845502500036F9F /* MyAnnotation.m in Sources */,
+				7E1E060F18455CDB006E5D0C /* LocationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
