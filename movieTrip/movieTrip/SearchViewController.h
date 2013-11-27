@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SearchViewController : UITableViewController  <UISearchBarDelegate, UISearchDisplayDelegate>
+@interface SearchViewController : UITableViewController  <UISearchBarDelegate, UISearchDisplayDelegate> {
+    NSMutableArray *locationArray;
+    NSMutableArray *movieArray;
+}
 
 @end

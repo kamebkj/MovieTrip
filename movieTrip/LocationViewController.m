@@ -65,7 +65,7 @@ static NSString *const BaseURLString = @"http://people.ischool.berkeley.edu/~jth
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section==0) return 170.0;
+    if (indexPath.section==0) return 220.0;
     else if (indexPath.section==1) return 60.0;
     else {
         // Initial
@@ -94,7 +94,7 @@ static NSString *const BaseURLString = @"http://people.ischool.berkeley.edu/~jth
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 150)];
         [imageView setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"https://mw2.google.com/mw-panoramio/photos/medium/17769178.jpg"]]]];
         
-        UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, self.view.bounds.size.width, 50)];
+        UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 160, self.view.bounds.size.width, 50)];
         [textLabel setText:locationName];
         [textLabel setLineBreakMode:NSLineBreakByWordWrapping];
         [textLabel setNumberOfLines:0];
