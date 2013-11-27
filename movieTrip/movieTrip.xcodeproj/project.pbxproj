@@ -167,15 +167,10 @@
 				7E1294B9183C33A300570C8B /* AppDelegate.h */,
 				7E1294BA183C33A300570C8B /* AppDelegate.m */,
 				7E1294C2183C33A300570C8B /* MainStoryboard.storyboard */,
-				7E1294E3183C399A00570C8B /* MapViewController.h */,
-				7E1294E4183C399A00570C8B /* MapViewController.m */,
-				7EAA5F911845502500036F9F /* MyAnnotation.h */,
-				7EAA5F921845502500036F9F /* MyAnnotation.m */,
-				7E1294CC183C33A300570C8B /* SearchViewController.h */,
-				7E1294CD183C33A300570C8B /* SearchViewController.m */,
+				7E1E061718457903006E5D0C /* Map */,
+				7E1E06181845790C006E5D0C /* Search */,
 				7E74A519184466DD008A13B1 /* Saved */,
-				7E1294DB183C358800570C8B /* MeViewController.h */,
-				7E1294DC183C358800570C8B /* MeViewController.m */,
+				7E1E061918457916006E5D0C /* Me */,
 				7E1E0616184575D5006E5D0C /* Custom Table */,
 				7E1294C8183C33A300570C8B /* first.png */,
 				7E1294CA183C33A300570C8B /* first@2x.png */,
@@ -215,6 +210,35 @@
 			name = "Custom Table";
 			sourceTree = "<group>";
 		};
+		7E1E061718457903006E5D0C /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				7E1294E3183C399A00570C8B /* MapViewController.h */,
+				7E1294E4183C399A00570C8B /* MapViewController.m */,
+				7EAA5F911845502500036F9F /* MyAnnotation.h */,
+				7EAA5F921845502500036F9F /* MyAnnotation.m */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		7E1E06181845790C006E5D0C /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				7E1294CC183C33A300570C8B /* SearchViewController.h */,
+				7E1294CD183C33A300570C8B /* SearchViewController.m */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		7E1E061918457916006E5D0C /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				7E1294DB183C358800570C8B /* MeViewController.h */,
+				7E1294DC183C358800570C8B /* MeViewController.m */,
+			);
+			name = Me;
+			sourceTree = "<group>";
+		};
 		7E37B84D18442EFC00C3643A /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,10 +270,10 @@
 			children = (
 				7E1294D8183C349300570C8B /* SavedViewController.h */,
 				7E1294D9183C349300570C8B /* SavedViewController.m */,
-				7E74A51318445922008A13B1 /* SavedListViewController.h */,
-				7E74A51418445922008A13B1 /* SavedListViewController.m */,
 				7E74A516184466D0008A13B1 /* AddTripViewController.h */,
 				7E74A517184466D0008A13B1 /* AddTripViewController.m */,
+				7E74A51318445922008A13B1 /* SavedListViewController.h */,
+				7E74A51418445922008A13B1 /* SavedListViewController.m */,
 			);
 			name = Saved;
 			sourceTree = "<group>";

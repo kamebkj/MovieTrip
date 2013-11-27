@@ -43,28 +43,13 @@
 - (IBAction)actionDone:(id)sender {
     
     if ([titleText.text isEqualToString:@""]) {
+        // TODO: alert or something
         NSLog(@"no title");
     }
     else {
         [self saveToPlist:titleText.text];
         [self dismissViewControllerAnimated:YES completion:nil];
     }
-}
-
-- (void)getFromPlist {
-    NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    path = [path stringByAppendingPathComponent:@"savedList.plist"];
-
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    if (![fileManager fileExistsAtPath:path]) {
-        NSString *sourcePath = [[NSBundle mainBundle] pathForResource:@"savedList" ofType:@"plist"];
-        [fileManager copyItemAtPath:sourcePath toPath:path error:nil];
-    }
-
-    NSMutableArray *savedArray = [[NSMutableArray alloc] initWithContentsOfFile:path];
-    
-    NSLog(@"savedArray count: %d", [savedArray count]);
-    
 }
 
 - (void)saveToPlist:(NSString*)title {
@@ -95,9 +80,6 @@
                                  emptyArray, @"places", nil];
     [newArray addObject:tobeAddDict];
     [newArray writeToFile:path atomically:YES];
-
-    
-    [self getFromPlist];
 }
 
 @end
