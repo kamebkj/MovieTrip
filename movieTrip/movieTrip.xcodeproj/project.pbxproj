@@ -29,6 +29,8 @@
 		7E1294EC183C430700570C8B /* campanile.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E1294EB183C430700570C8B /* campanile.jpg */; };
 		7E1E060F18455CDB006E5D0C /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1E060D18455CDB006E5D0C /* LocationViewController.m */; };
 		7E1E061018455CDB006E5D0C /* LocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E1E060E18455CDB006E5D0C /* LocationViewController.xib */; };
+		7E1E0614184575CB006E5D0C /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1E0612184575CB006E5D0C /* MovieViewController.m */; };
+		7E1E0615184575CB006E5D0C /* MovieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E1E0613184575CB006E5D0C /* MovieViewController.xib */; };
 		7E37B86118442EFC00C3643A /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E37B84F18442EFC00C3643A /* AFHTTPClient.m */; };
 		7E37B86218442EFC00C3643A /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E37B85118442EFC00C3643A /* AFHTTPRequestOperation.m */; };
 		7E37B86318442EFC00C3643A /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E37B85318442EFC00C3643A /* AFImageRequestOperation.m */; };
@@ -78,6 +80,9 @@
 		7E1E060C18455CDB006E5D0C /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationViewController.h; path = ../LocationViewController.h; sourceTree = "<group>"; };
 		7E1E060D18455CDB006E5D0C /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationViewController.m; path = ../LocationViewController.m; sourceTree = "<group>"; };
 		7E1E060E18455CDB006E5D0C /* LocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LocationViewController.xib; path = ../LocationViewController.xib; sourceTree = "<group>"; };
+		7E1E0611184575CB006E5D0C /* MovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieViewController.h; sourceTree = "<group>"; };
+		7E1E0612184575CB006E5D0C /* MovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieViewController.m; sourceTree = "<group>"; };
+		7E1E0613184575CB006E5D0C /* MovieViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieViewController.xib; sourceTree = "<group>"; };
 		7E37B84E18442EFC00C3643A /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		7E37B84F18442EFC00C3643A /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		7E37B85018442EFC00C3643A /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -166,14 +171,12 @@
 				7E1294E4183C399A00570C8B /* MapViewController.m */,
 				7EAA5F911845502500036F9F /* MyAnnotation.h */,
 				7EAA5F921845502500036F9F /* MyAnnotation.m */,
-				7E1E060C18455CDB006E5D0C /* LocationViewController.h */,
-				7E1E060D18455CDB006E5D0C /* LocationViewController.m */,
-				7E1E060E18455CDB006E5D0C /* LocationViewController.xib */,
 				7E1294CC183C33A300570C8B /* SearchViewController.h */,
 				7E1294CD183C33A300570C8B /* SearchViewController.m */,
 				7E74A519184466DD008A13B1 /* Saved */,
 				7E1294DB183C358800570C8B /* MeViewController.h */,
 				7E1294DC183C358800570C8B /* MeViewController.m */,
+				7E1E0616184575D5006E5D0C /* Custom Table */,
 				7E1294C8183C33A300570C8B /* first.png */,
 				7E1294CA183C33A300570C8B /* first@2x.png */,
 				7E1294CF183C33A300570C8B /* second.png */,
@@ -197,6 +200,19 @@
 				7E1294C0183C33A300570C8B /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7E1E0616184575D5006E5D0C /* Custom Table */ = {
+			isa = PBXGroup;
+			children = (
+				7E1E0611184575CB006E5D0C /* MovieViewController.h */,
+				7E1E0612184575CB006E5D0C /* MovieViewController.m */,
+				7E1E0613184575CB006E5D0C /* MovieViewController.xib */,
+				7E1E060C18455CDB006E5D0C /* LocationViewController.h */,
+				7E1E060D18455CDB006E5D0C /* LocationViewController.m */,
+				7E1E060E18455CDB006E5D0C /* LocationViewController.xib */,
+			);
+			name = "Custom Table";
 			sourceTree = "<group>";
 		};
 		7E37B84D18442EFC00C3643A /* AFNetworking */ = {
@@ -301,6 +317,7 @@
 				7E1294EC183C430700570C8B /* campanile.jpg in Resources */,
 				7E74A50F184456D4008A13B1 /* savedList.plist in Resources */,
 				7E1E061018455CDB006E5D0C /* LocationViewController.xib in Resources */,
+				7E1E0615184575CB006E5D0C /* MovieViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +347,7 @@
 				7E74A518184466D0008A13B1 /* AddTripViewController.m in Sources */,
 				7EAA5F931845502500036F9F /* MyAnnotation.m in Sources */,
 				7E1E060F18455CDB006E5D0C /* LocationViewController.m in Sources */,
+				7E1E0614184575CB006E5D0C /* MovieViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

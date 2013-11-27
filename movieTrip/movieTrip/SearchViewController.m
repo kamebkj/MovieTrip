@@ -9,6 +9,7 @@
 #import "SearchViewController.h"
 #import "AFNetworking.h"
 #import "LocationViewController.h"
+#import "MovieViewController.h"
 
 static NSString *const BaseURLString = @"http://people.ischool.berkeley.edu/~jthuang/i298/";
 
@@ -135,10 +136,11 @@ static NSString *const BaseURLString = @"http://people.ischool.berkeley.edu/~jth
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (indexPath.section==0 && [movieArray count]!=0) {
-        NSLog(@"%@", [movieArray[indexPath.row] objectForKey:@"Movie_Id"]);
+        MovieViewController *movieVC = [[MovieViewController alloc] initWithNibName:@"MovieViewController" bundle:nil];
+        movieVC.movieId = [movieArray[indexPath.row] objectForKey:@"Movie_Id"];
+        [self.navigationController pushViewController:movieVC animated:YES];
     }
     else {
-//        NSLog(@"%@", [locationArray[indexPath.row] objectForKey:@"Location_Id"]);
         LocationViewController *locationVC = [[LocationViewController alloc] initWithNibName:@"LocationViewController" bundle:nil];
         locationVC.locationId = [locationArray[indexPath.row] objectForKey:@"Location_Id"];
         [self.navigationController pushViewController:locationVC animated:YES];
