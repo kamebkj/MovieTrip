@@ -8,6 +8,7 @@
 
 #import "SearchViewController.h"
 #import "AFNetworking.h"
+#import "LocationViewController.h"
 
 static NSString *const BaseURLString = @"http://people.ischool.berkeley.edu/~jthuang/i298/";
 
@@ -85,8 +86,6 @@ static NSString *const BaseURLString = @"http://people.ischool.berkeley.edu/~jth
     
     locationArray = [dict objectForKey:@"Locations"];
     movieArray = [dict objectForKey:@"Movies"];
-    
-    NSLog(@"locationArray:%d, %@", [locationArray count], locationArray);
 
     [self.searchDisplayController.searchResultsTableView reloadData];
 }
@@ -122,21 +121,30 @@ static NSString *const BaseURLString = @"http://people.ischool.berkeley.edu/~jth
     }
     
     
-    if ([movieArray count]!=0) {
-        if (indexPath.section==0) {
-            cell.textLabel.text = [movieArray[indexPath.row] objectForKey:@"Title"];
-        }
-        else {
-            cell.textLabel.text = [locationArray[indexPath.row] objectForKey:@"Description"];
-        }
+    if (indexPath.section==0 && [movieArray count]!=0) {
+        cell.textLabel.text = [movieArray[indexPath.row] objectForKey:@"Title"];
     }
     else {
-        if (indexPath.section==0) {
-            cell.textLabel.text = [locationArray[indexPath.row] objectForKey:@"Description"];
-        }
+        cell.textLabel.text = [locationArray[indexPath.row] objectForKey:@"Description"];
     }
     
     return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (indexPath.section==0 && [movieArray count]!=0) {
+        NSLog(@"%@", [movieArray[indexPath.row] objectForKey:@"Movie_Id"]);
+    }
+    else {
+//        NSLog(@"%@", [locationArray[indexPath.row] objectForKey:@"Location_Id"]);
+        LocationViewController *locationVC = [[LocationViewController alloc] initWithNibName:@"LocationViewController" bundle:nil];
+        locationVC.locationId = [locationArray[indexPath.row] objectForKey:@"Location_Id"];
+        [self.navigationController pushViewController:locationVC animated:YES];
+    }
+    
+}
+
 
 @end

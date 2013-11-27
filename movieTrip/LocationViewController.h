@@ -12,8 +12,6 @@
     NSString *locationName;
     NSArray *moviesArray;
     NSInteger selectedMovie;
-    
-    //    IBOutlet UITableView *tableViewOutlet;
 }
 
 @property (nonatomic, retain) NSString *locationId;

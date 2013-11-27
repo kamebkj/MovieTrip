@@ -171,7 +171,6 @@ static NSString *const BaseURLString = @"http://people.ischool.berkeley.edu/~jth
     AFJSONRequestOperation *operation =
     [AFJSONRequestOperation JSONRequestOperationWithRequest:request
                                                     success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-                                                        //                                                        locationObj = (NSDictionary*)JSON;
                                                         [self setLocationData:(NSDictionary*)JSON];
                                                     }
                                                     failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
