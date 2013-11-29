@@ -7,11 +7,14 @@
 //
 
 #import "MovieViewController.h"
+#import "AFNetworking.h"
+
+static NSString *const BaseURLString = @"http://people.ischool.berkeley.edu/~jthuang/i298/";
 
 static CGFloat marginLeft = 20.0;
 static CGFloat marginTop = 20.0;
 
-// Title, Description, 
+// UIView
 static CGFloat titleviewHeight = 80.0;
 static CGFloat descriptionViewHeight = 200.0;
 static CGFloat buttonViewHeight = 100.0;
@@ -20,13 +23,11 @@ static CGFloat buttonViewHeight = 100.0;
 static CGFloat titleLabelHeight = 30.0;
 static CGFloat genreLabelHeight = 20.0;
 
-
-
-// image
+// Poster image
 static CGFloat posterWidth = 100.0;
 static CGFloat posterHeight = 148.0;
-// button
 
+// Button
 static CGFloat buttonWidth = 130.0;
 static CGFloat buttonHeight = 40.0;
 
@@ -36,6 +37,7 @@ static CGFloat buttonHeight = 40.0;
 @end
 
 @implementation MovieViewController
+@synthesize movieId;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -49,9 +51,91 @@ static CGFloat buttonHeight = 40.0;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    [indicator startAnimating];
+    [self getData];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+}
+
+#pragma mark - Button click
+
+- (void)clickImdb:(id)sender {
+    NSLog(@"%@", movieImdbId);
+}
+
+- (void)clickTrial:(id)sender {
+    NSLog(@"trial");
+}
+
+#pragma mark - Table view
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [movieLocations count];
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *CellIdentifier = @"LocationCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    cell.textLabel.text = [movieLocations[indexPath.row] objectForKey:@"Description"];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+}
+
+
+#pragma mark - Get data
+
+- (void)getData {
+    NSString *weatherUrl = [NSString stringWithFormat:@"%@movie.php?id=%@", BaseURLString, movieId];
+    NSURL *url = [NSURL URLWithString:weatherUrl];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    AFJSONRequestOperation *operation =
+    [AFJSONRequestOperation JSONRequestOperationWithRequest:request
+                                                    success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+                                                        [self setData:(NSDictionary*)JSON];
+                                                    }
+                                                    failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+                                                        NSLog(@"error");
+                                                    }
+     ];
+    [operation start];
+}
+
+- (void)setData:(NSDictionary*)dict {
+    movieTitle = [dict objectForKey:@"Title"];
+    movieYear = [dict objectForKey:@"Year"];
+    movieDescription = [dict objectForKey:@"Description"];
+//    movieGenre = [dict objectForKey:@"Genre"];
+    movieImdbId = [dict objectForKey:@"IMDb_Id"];
+    moviePosterUrl = [dict objectForKey:@"Poster"];
+    movieLocations = (NSMutableArray*)[dict objectForKey:@"Locations"];
+    
+    [self setViews];
+}
+
+- (void)setViews {
     
     windowWidth = self.view.bounds.size.width;
-    locationTableViewHeight = 220.0;
+    locationTableViewHeight = [movieLocations count]*44;
     
     // Initiate scroll view
     [scrollView setContentSize:CGSizeMake(windowWidth, titleviewHeight+descriptionViewHeight+buttonViewHeight+locationTableViewHeight+marginTop*2)];
@@ -66,7 +150,7 @@ static CGFloat buttonHeight = 40.0;
     
     // Title view
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(marginLeft, marginTop, windowWidth-marginLeft*2, titleLabelHeight)];
-    [titleLabel setText:@"Conan (2012)"];
+    [titleLabel setText:[NSString stringWithFormat:@"%@ %@", movieTitle, movieYear]];
     [titleLabel setFont:[UIFont boldSystemFontOfSize:20.0]];
     UILabel *genreLabel = [[UILabel alloc] initWithFrame:CGRectMake(marginLeft, titleLabelHeight+marginTop, windowWidth-marginLeft*2, genreLabelHeight)];
     [genreLabel setText:@"drama/cartoon"];
@@ -78,7 +162,7 @@ static CGFloat buttonHeight = 40.0;
     UIImageView *posterImageView = [[UIImageView alloc] initWithFrame:CGRectMake(marginLeft, marginTop, posterWidth, posterHeight)];
     [posterImageView setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://ia.media-imdb.com/images/M/MV5BMTQ0NDIyNzAzNF5BMl5BanBnXkFtZTcwOTcxNjYzMQ@@._V1_SY317_CR5,0,214,317_.jpg"]]]];
     UILabel *descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(posterWidth+2*marginLeft, marginTop, windowWidth-marginLeft*3-posterWidth, posterHeight)];
-    [descriptionLabel setText:@"The cases of a detective whose physical age was chemically reversed to that of a prepubescent boy but must hide his true mental development."];
+    [descriptionLabel setText:movieDescription];
     [descriptionLabel setFont:[UIFont systemFontOfSize:14.0]];
     [descriptionLabel setLineBreakMode:NSLineBreakByWordWrapping];
     [descriptionLabel setNumberOfLines:0];
@@ -109,50 +193,7 @@ static CGFloat buttonHeight = 40.0;
     [scrollView addSubview:buttonView];
     [scrollView addSubview:locationTableView];
     
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
-
-#pragma mark - Button click
-
-- (void)clickImdb:(id)sender {
-    NSLog(@"imdb");
-}
-
-- (void)clickTrial:(id)sender {
-    NSLog(@"trial");
-}
-
-#pragma mark - Table view
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
-}
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"LocationCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
-    
-    cell.textLabel.text = @"bkj";
-    
-    return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+    [indicator stopAnimating];
 }
 
 @end
