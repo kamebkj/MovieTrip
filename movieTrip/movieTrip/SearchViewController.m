@@ -137,7 +137,7 @@ static NSString *const BaseURLString = @"http://people.ischool.berkeley.edu/~jth
     
     if (indexPath.section==0 && [movieArray count]!=0) {
         MovieViewController *movieVC = [[MovieViewController alloc] initWithNibName:@"MovieViewController" bundle:nil];
-        movieVC.movieId = [movieArray[indexPath.row] objectForKey:@"Movie_Id"];
+//        movieVC.movieId = [movieArray[indexPath.row] objectForKey:@"Movie_Id"];
         [self.navigationController pushViewController:movieVC animated:YES];
     }
     else {

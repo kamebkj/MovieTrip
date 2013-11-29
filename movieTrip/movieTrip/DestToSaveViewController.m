@@ -1,25 +1,22 @@
 //
-//  SavedViewController.m
+//  DestToSaveViewController.m
 //  movieTrip
 //
-//  Created by Kate Hsiao on 11/19/13.
+//  Created by Kate Hsiao on 11/26/13.
 //  Copyright (c) 2013 Kate Hsiao. All rights reserved.
 //
 
-#import "SavedViewController.h"
-#import "SavedListViewController.h"
-#import "AddTripViewController.h"
+#import "DestToSaveViewController.h"
 
-@interface SavedViewController ()
+@interface DestToSaveViewController ()
 
 @end
 
-@implementation SavedViewController
-@synthesize editButton;
+@implementation DestToSaveViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithStyle:(UITableViewStyle)style
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
     }
@@ -29,10 +26,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Configure button style
-    [editButton setTitle:@"Edit"];
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -45,8 +38,6 @@
 {
     [super didReceiveMemoryWarning];
 }
-
-
 
 #pragma mark - Table view data source
 #pragma mark - Section
@@ -68,7 +59,7 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-
+    
     cell.textLabel.text = [savedArray[indexPath.row] objectForKey:@"tripName"];
     
     return cell;
@@ -77,52 +68,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    SavedListViewController *savedListVC = [self.storyboard instantiateViewControllerWithIdentifier:@"savedListVC"];
-    savedListVC.savedTripDict = savedArray[indexPath.row];
-    [self.navigationController pushViewController:savedListVC animated:YES];
+    // TODO: save to plist
     
 }
 
-
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-     return YES;
- }
-
-
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-     if (editingStyle == UITableViewCellEditingStyleDelete) {
-         // TODO: Remove from plist
-         NSLog(@"delete");
-         [savedArray removeObjectAtIndex:indexPath.row];
-         [self saveToPlist:savedArray];
-         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-         
-     }
-     else if (editingStyle == UITableViewCellEditingStyleInsert) {
-         // Not used now
-         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-         NSLog(@"insert");
-     }
- }
-
-#pragma mark - Button click
-
-- (IBAction)actionEdit:(UIBarButtonItem *)sender {
-    if (self.tableView.editing) {
-        sender.title = @"Edit";
-        [super setEditing:NO animated:YES];
-    } else {
-        sender.title = @"Done";
-        [super setEditing:YES animated:YES];
-    }
-}
-
-- (IBAction)actionAdd:(UIBarButtonItem *)sender {
-    AddTripViewController *addTripVC = [self.storyboard instantiateViewControllerWithIdentifier:@"addTripVC"];
-    [self.navigationController presentViewController:addTripVC animated:YES completion:nil];
-}
 
 
 #pragma mark - Plist operation
@@ -137,10 +86,10 @@
         [fileManager copyItemAtPath:sourcePath toPath:path error:nil];
     }
     savedArray = [[NSMutableArray alloc] initWithContentsOfFile:path];
-
+    
 }
 
-- (void)saveToPlist:(NSMutableArray*)newArray {
+- (void)saveToPlist:(NSString*)place withIndex:(NSInteger)index {
     
     NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     path = [path stringByAppendingPathComponent:@"savedList.plist"];
@@ -152,7 +101,18 @@
         [fileManager copyItemAtPath:sourcePath toPath:path error:nil];
     }
     
-    [newArray writeToFile:path atomically:YES];
+    // Load the Property List.
+    NSArray *savedArray = [[NSArray alloc] initWithContentsOfFile:path];
+    // If place already exists, alert and not store
+    // TODO
+    
+//    NSMutableArray *newArray = [savedArray mutableCopy];
+//    NSArray *emptyArray = [[NSArray alloc] init];
+//    NSDictionary *tobeAddDict = [[NSDictionary alloc] initWithObjectsAndKeys:
+//                                 title, @"tripName",
+//                                 emptyArray, @"places", nil];
+//    [newArray addObject:tobeAddDict];
+//    [newArray writeToFile:path atomically:YES];
 }
 
 @end
