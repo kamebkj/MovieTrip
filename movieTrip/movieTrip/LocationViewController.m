@@ -11,6 +11,7 @@
 #import "DestToSaveViewController.h"
 #import "AFNetworking.h"
 #import <QuartzCore/QuartzCore.h>
+#import "FacebookSDK.framework/Headers/FacebookSDK.h"
 
 static NSString *const BaseURLString = @"http://people.ischool.berkeley.edu/~jthuang/i298/";
 
@@ -61,6 +62,22 @@ static CGFloat buttonHeight = 40.0;
 
 - (void)clickCheckin:(id)sender {
     NSLog(@"checkin");
+    // If a user has *never* logged into your app, request one of
+    // "email", "user_location", or "user_birthday". If you do not
+    // pass in any permissions, "email" permissions will be automatically
+    // requested for you. Other read permissions can also be included here.
+    
+    // can include any of the "publish" or "manage" permissions
+//    NSArray *permissions = [NSArray arrayWithObjects:@"publish_actions", nil];
+//    
+//    [[FBSession activeSession] requestNewPublishPermissions:permissions
+//                                            defaultAudience:FBSessionDefaultAudienceFriends
+//                                          completionHandler:^(FBSession *session, NSError *error) {
+//                                              /* handle success + failure in block */
+//                                              NSLog(@"session: %@", session);
+//                                              NSLog(@"error: %@", error);
+//                                          }];
+    
 }
 
 - (void)clickSave:(id)sender {

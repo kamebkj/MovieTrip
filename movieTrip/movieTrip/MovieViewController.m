@@ -189,7 +189,7 @@ static CGFloat buttonHeight = 40.0;
     
     // Description view
     UIImageView *posterImageView = [[UIImageView alloc] initWithFrame:CGRectMake(marginLeft, marginTop, posterWidth, posterHeight)];
-    [posterImageView setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://ia.media-imdb.com/images/M/MV5BMTQ0NDIyNzAzNF5BMl5BanBnXkFtZTcwOTcxNjYzMQ@@._V1_SY317_CR5,0,214,317_.jpg"]]]];
+    [posterImageView setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:moviePosterUrl]]]];
     UILabel *descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(posterWidth+2*marginLeft, marginTop, windowWidth-marginLeft*3-posterWidth, posterHeight)];
     [descriptionLabel setText:movieDescription];
     [descriptionLabel setFont:[UIFont systemFontOfSize:14.0]];

@@ -10,6 +10,7 @@
 #import <MapKit/MapKit.h>
 
 @interface MapViewController : UIViewController <MKMapViewDelegate, MKAnnotation> {
+    CLLocationCoordinate2D location;
     Boolean didDrawAnnotation;
 }
 

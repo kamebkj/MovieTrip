@@ -7,12 +7,21 @@
 //
 
 #import "AppDelegate.h"
+#import "FacebookSDK.framework/Headers/FacebookSDK.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    
+//    if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
+//        // Yes, so just open the session (this won't display any UX).
+//        [self openSession];
+//    } else {
+//        // No, display the login page.
+//        [self showLoginView];
+//    }
+//    
     return YES;
 }
 							
@@ -42,5 +51,56 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
+//- (void)sessionStateChanged:(FBSession *)session
+//                      state:(FBSessionState) state
+//                      error:(NSError *)error
+//{
+//    switch (state) {
+//        case FBSessionStateOpen: {
+//            UIViewController *topViewController =
+//            [self.navController topViewController];
+//            if ([[topViewController modalViewController]
+//                 isKindOfClass:[SCLoginViewController class]]) {
+//                [topViewController dismissModalViewControllerAnimated:YES];
+//            }
+//        }
+//            break;
+//        case FBSessionStateClosed:
+//        case FBSessionStateClosedLoginFailed:
+//            // Once the user has logged in, we want them to
+//            // be looking at the root view.
+//            [self.navController popToRootViewControllerAnimated:NO];
+//            
+//            [FBSession.activeSession closeAndClearTokenInformation];
+//            
+//            [self showLoginView];
+//            break;
+//        default:
+//            break;
+//    }
+//    
+//    if (error) {
+//        UIAlertView *alertView = [[UIAlertView alloc]
+//                                  initWithTitle:@"Error"
+//                                  message:error.localizedDescription
+//                                  delegate:nil
+//                                  cancelButtonTitle:@"OK"
+//                                  otherButtonTitles:nil];
+//        [alertView show];
+//    }
+//}
+//
+//- (void)openSession
+//{
+//    [FBSession openActiveSessionWithReadPermissions:nil
+//                                       allowLoginUI:YES
+//                                  completionHandler:
+//     ^(FBSession *session,
+//       FBSessionState state, NSError *error) {
+//         [self sessionStateChanged:session state:state error:error];
+//     }];
+//}
 
 @end
