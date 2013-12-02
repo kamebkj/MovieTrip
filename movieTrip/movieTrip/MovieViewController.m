@@ -7,6 +7,7 @@
 //
 
 #import "MovieViewController.h"
+#import "LocationViewController.h"
 #import "AFNetworking.h"
 #import <QuartzCore/QuartzCore.h>
 
@@ -102,6 +103,10 @@ static CGFloat buttonHeight = 40.0;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    LocationViewController *locationVC = [[LocationViewController alloc] initWithNibName:@"LocationViewController" bundle:nil];
+    locationVC.locationId = [movieLocations[indexPath.row] objectForKey:@"Location_Id"];
+    [self.navigationController pushViewController:locationVC animated:YES];
+    
 }
 
 
@@ -166,7 +171,6 @@ static CGFloat buttonHeight = 40.0;
     [buttonView addSubview:buttonBorder];
     
     locationTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, titleviewHeight+descriptionViewHeight+buttonViewHeight, windowWidth, locationTableViewHeight) style:UITableViewStyleGrouped];
-//    locationTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, titleviewHeight+descriptionViewHeight+buttonViewHeight, windowWidth, locationTableViewHeight) style:UITableViewStylePlain];
     [locationTableView setBackgroundView:nil];
     [locationTableView setBackgroundColor:[UIColor colorWithRed:0.98 green:0.98 blue:0.98 alpha:1.0]];
     
