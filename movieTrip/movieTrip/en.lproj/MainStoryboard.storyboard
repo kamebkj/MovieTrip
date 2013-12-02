@@ -65,6 +65,7 @@
             <objects>
                 <navigationController definesPresentationContext="YES" id="lqA-Uy-pOo" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Nearby" id="F1c-zR-KVc"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="OPN-oB-6xa">
                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
@@ -86,7 +87,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="wvN-u3-i7v">
+                        <searchBar key="tableHeaderView" contentMode="redraw" barStyle="blackOpaque" id="wvN-u3-i7v">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
@@ -118,6 +119,7 @@
             <objects>
                 <navigationController definesPresentationContext="YES" id="zez-0q-VQO" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Search" id="xMw-G7-uYk"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="zwM-qk-YKx">
                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
@@ -245,7 +247,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3jf-A6-o4q">
+                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="3jf-A6-o4q">
                                 <items>
                                     <navigationItem title="Add new Trip" id="sb9-F4-dcF">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="0LR-Cf-szr">
@@ -289,6 +291,7 @@
             <objects>
                 <navigationController definesPresentationContext="YES" id="vJA-hY-Dac" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Saved" id="Xm6-WI-cHL"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="cQN-6s-IZW">
                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
@@ -333,6 +336,7 @@
             <objects>
                 <navigationController definesPresentationContext="YES" id="LIn-xW-HDF" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Me" id="0qo-6l-q9C"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="suC-SV-hZK">
                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
