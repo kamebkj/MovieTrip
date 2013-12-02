@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DestToSaveViewController : UITableViewController {
+@interface DestToSaveViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+    __weak IBOutlet UITableView *myTableView;
     NSMutableArray *savedArray;
 }
 
-//@property (retain, nonatomic) NSDictionary *savedTripDict;
+@property (nonatomic, retain) NSString *place;
+@property (nonatomic, retain) NSString *placeId;
+
+- (IBAction)clickCancel:(id)sender;
 
 @end

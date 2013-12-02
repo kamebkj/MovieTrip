@@ -45,7 +45,7 @@ static NSString *const BaseURLString = @"http://people.ischool.berkeley.edu/~jth
     location.latitude = 35.026267;
     location.longitude = 135.751904;
     
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location, 1000000, 1000000);
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location, 10000, 10000);
     [self.mapView setRegion:[self.mapView regionThatFits:region] animated:NO];
     
     // GET data, give paras of location & ?
@@ -77,7 +77,7 @@ static NSString *const BaseURLString = @"http://people.ischool.berkeley.edu/~jth
 }
 
 - (void)getNearbyData {
-    NSString *weatherUrl = [NSString stringWithFormat:@"%@nearby.php?lat=35.026267&lon=135.751904&dist=1000000&num=30", BaseURLString];
+    NSString *weatherUrl = [NSString stringWithFormat:@"%@nearby.php?lat=35.026267&lon=135.751904&dist=10000&num=30", BaseURLString];
     NSURL *url = [NSURL URLWithString:weatherUrl];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     

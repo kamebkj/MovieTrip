@@ -7,6 +7,7 @@
 //
 
 #import "SavedListViewController.h"
+#import "LocationViewController.h"
 
 @interface SavedListViewController ()
 
@@ -29,6 +30,8 @@
     [super viewDidLoad];
     self.navigationItem.title = [savedTripDict objectForKey:@"tripName"];
     places = [savedTripDict objectForKey:@"places"];
+    
+    NSLog(@"places: %@", places);
 
 }
 
@@ -60,7 +63,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    cell.textLabel.text = places[indexPath.row];
+    cell.textLabel.text = [places[indexPath.row] objectForKey:@"placeName"];
     
     return cell;
 }
@@ -72,13 +75,10 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    LocationViewController *locationVC = [[LocationViewController alloc] initWithNibName:@"LocationViewController" bundle:nil];
+    locationVC.locationId =[places[indexPath.row] objectForKey:@"placeId"];
+    [self.navigationController pushViewController:locationVC animated:YES];
+    
 }
 
 @end

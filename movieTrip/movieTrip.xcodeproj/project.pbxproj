@@ -10,6 +10,8 @@
 		7E098C0A184C42A3002679B3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E098C09184C42A3002679B3 /* QuartzCore.framework */; };
 		7E098C0E184C5CBB002679B3 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E098C0C184C5CBB002679B3 /* LocationViewController.m */; };
 		7E098C0F184C5CBB002679B3 /* LocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E098C0D184C5CBB002679B3 /* LocationViewController.xib */; };
+		7E098C1C184C6D28002679B3 /* DestToSaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E098C1A184C6D28002679B3 /* DestToSaveViewController.m */; };
+		7E098C1D184C6D28002679B3 /* DestToSaveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E098C1B184C6D28002679B3 /* DestToSaveViewController.xib */; };
 		7E1294AB183C33A300570C8B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1294AA183C33A300570C8B /* UIKit.framework */; };
 		7E1294AD183C33A300570C8B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1294AC183C33A300570C8B /* Foundation.framework */; };
 		7E1294AF183C33A300570C8B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1294AE183C33A300570C8B /* CoreGraphics.framework */; };
@@ -30,7 +32,6 @@
 		7E1294E2183C38AA00570C8B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1294E1183C38AA00570C8B /* MapKit.framework */; };
 		7E1294E5183C399A00570C8B /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1294E4183C399A00570C8B /* MapViewController.m */; };
 		7E1294EC183C430700570C8B /* campanile.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E1294EB183C430700570C8B /* campanile.jpg */; };
-		7E1E061C18457BC1006E5D0C /* DestToSaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1E061B18457BC1006E5D0C /* DestToSaveViewController.m */; };
 		7E1E06201846E086006E5D0C /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1E061E1846E086006E5D0C /* MovieViewController.m */; };
 		7E1E06211846E086006E5D0C /* MovieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E1E061F1846E086006E5D0C /* MovieViewController.xib */; };
 		7E37B86118442EFC00C3643A /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E37B84F18442EFC00C3643A /* AFHTTPClient.m */; };
@@ -55,6 +56,9 @@
 		7E098C0B184C5CBB002679B3 /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
 		7E098C0C184C5CBB002679B3 /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
 		7E098C0D184C5CBB002679B3 /* LocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationViewController.xib; sourceTree = "<group>"; };
+		7E098C19184C6D28002679B3 /* DestToSaveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestToSaveViewController.h; sourceTree = "<group>"; };
+		7E098C1A184C6D28002679B3 /* DestToSaveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestToSaveViewController.m; sourceTree = "<group>"; };
+		7E098C1B184C6D28002679B3 /* DestToSaveViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DestToSaveViewController.xib; sourceTree = "<group>"; };
 		7E1294A7183C33A300570C8B /* movieTrip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = movieTrip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E1294AA183C33A300570C8B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7E1294AC183C33A300570C8B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -83,8 +87,6 @@
 		7E1294E3183C399A00570C8B /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		7E1294E4183C399A00570C8B /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		7E1294EB183C430700570C8B /* campanile.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = campanile.jpg; sourceTree = "<group>"; };
-		7E1E061A18457BC1006E5D0C /* DestToSaveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestToSaveViewController.h; sourceTree = "<group>"; };
-		7E1E061B18457BC1006E5D0C /* DestToSaveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestToSaveViewController.m; sourceTree = "<group>"; };
 		7E1E061D1846E085006E5D0C /* MovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieViewController.h; sourceTree = "<group>"; };
 		7E1E061E1846E086006E5D0C /* MovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieViewController.m; sourceTree = "<group>"; };
 		7E1E061F1846E086006E5D0C /* MovieViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieViewController.xib; sourceTree = "<group>"; };
@@ -281,8 +283,9 @@
 				7E74A517184466D0008A13B1 /* AddTripViewController.m */,
 				7E74A51318445922008A13B1 /* SavedListViewController.h */,
 				7E74A51418445922008A13B1 /* SavedListViewController.m */,
-				7E1E061A18457BC1006E5D0C /* DestToSaveViewController.h */,
-				7E1E061B18457BC1006E5D0C /* DestToSaveViewController.m */,
+				7E098C19184C6D28002679B3 /* DestToSaveViewController.h */,
+				7E098C1A184C6D28002679B3 /* DestToSaveViewController.m */,
+				7E098C1B184C6D28002679B3 /* DestToSaveViewController.xib */,
 			);
 			name = Saved;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				7E74A50F184456D4008A13B1 /* savedList.plist in Resources */,
 				7E1E06211846E086006E5D0C /* MovieViewController.xib in Resources */,
 				7E098C0F184C5CBB002679B3 /* LocationViewController.xib in Resources */,
+				7E098C1D184C6D28002679B3 /* DestToSaveViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,9 +383,9 @@
 				7E74A51518445922008A13B1 /* SavedListViewController.m in Sources */,
 				7E74A518184466D0008A13B1 /* AddTripViewController.m in Sources */,
 				7EAA5F931845502500036F9F /* MyAnnotation.m in Sources */,
-				7E1E061C18457BC1006E5D0C /* DestToSaveViewController.m in Sources */,
 				7E1E06201846E086006E5D0C /* MovieViewController.m in Sources */,
 				7E098C0E184C5CBB002679B3 /* LocationViewController.m in Sources */,
+				7E098C1C184C6D28002679B3 /* DestToSaveViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

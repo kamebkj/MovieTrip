@@ -8,6 +8,7 @@
 
 #import "LocationViewController.h"
 #import "MovieViewController.h"
+#import "DestToSaveViewController.h"
 #import "AFNetworking.h"
 #import <QuartzCore/QuartzCore.h>
 
@@ -63,7 +64,10 @@ static CGFloat buttonHeight = 40.0;
 }
 
 - (void)clickSave:(id)sender {
-    NSLog(@"save");
+    DestToSaveViewController *destToSaveVC = [[DestToSaveViewController alloc] initWithNibName:@"DestToSaveViewController" bundle:nil];
+    destToSaveVC.place = locationTitle;
+    destToSaveVC.placeId = locationId;
+    [self.navigationController presentViewController:destToSaveVC animated:YES completion:nil];
 }
 
 #pragma mark - Table view

@@ -13,25 +13,30 @@
 @end
 
 @implementation DestToSaveViewController
+@synthesize place, placeId;
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+//- (id)initWithStyle:(UITableViewStyle)style
+//{
+//    self = [super initWithStyle:style];
+//    if (self) {
+//        // Custom initialization
+//    }
+//    return self;
+//}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [myTableView setDelegate:self];
+    [myTableView setDataSource:self];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     // Get saved list from savedList.plist
     [self getFromPlist];
-    [self.tableView reloadData];
+    [myTableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,14 +44,11 @@
     [super didReceiveMemoryWarning];
 }
 
-#pragma mark - Table view data source
-#pragma mark - Section
+#pragma mark - Table view
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
-
-#pragma mark - Table cell
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [savedArray count];
@@ -67,9 +69,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    // TODO: save to plist
-    
+    [self saveToPlist:indexPath.row];
 }
 
 
@@ -89,30 +89,30 @@
     
 }
 
-- (void)saveToPlist:(NSString*)place withIndex:(NSInteger)index {
+- (void)saveToPlist:(NSInteger)index {
     
     NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     path = [path stringByAppendingPathComponent:@"savedList.plist"];
     
-    // If the file doesn't exist in the Documents Folder, copy it.
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    if (![fileManager fileExistsAtPath:path]) {
-        NSString *sourcePath = [[NSBundle mainBundle] pathForResource:@"savedList" ofType:@"plist"];
-        [fileManager copyItemAtPath:sourcePath toPath:path error:nil];
-    }
-    
-    // Load the Property List.
-    NSArray *savedArray = [[NSArray alloc] initWithContentsOfFile:path];
     // If place already exists, alert and not store
     // TODO
+    NSMutableArray *newArray = [savedArray mutableCopy];
+    NSDictionary *newPlace = [[NSDictionary alloc] initWithObjectsAndKeys:
+                              place, @"placeName",
+                              placeId, @"placeId", nil];
+    [[newArray[index] objectForKey:@"places"] addObject:newPlace];
+    [newArray writeToFile:path atomically:YES];
     
-//    NSMutableArray *newArray = [savedArray mutableCopy];
-//    NSArray *emptyArray = [[NSArray alloc] init];
-//    NSDictionary *tobeAddDict = [[NSDictionary alloc] initWithObjectsAndKeys:
-//                                 title, @"tripName",
-//                                 emptyArray, @"places", nil];
-//    [newArray addObject:tobeAddDict];
-//    [newArray writeToFile:path atomically:YES];
+    //
+    //    NSArray *emptyArray = [[NSArray alloc] init];
+    //    NSDictionary *tobeAddDict = [[NSDictionary alloc] initWithObjectsAndKeys:
+    //                                 title, @"tripName",
+    //                                 emptyArray, @"places", nil];
+    //    [newArray addObject:tobeAddDict];
+    //    [newArray writeToFile:path atomically:YES];
 }
 
+- (IBAction)clickCancel:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end
