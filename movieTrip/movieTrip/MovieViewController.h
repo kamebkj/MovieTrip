@@ -24,7 +24,8 @@
     NSString *movieTitle;
     NSString *movieYear;
     NSString *movieDescription;
-    NSMutableArray *movieGenre;
+//    NSMutableArray *movieGenre;
+    NSString *movieGenre;
     NSString *movieImdbId;
     NSString *moviePosterUrl;
     NSMutableArray *movieLocations;

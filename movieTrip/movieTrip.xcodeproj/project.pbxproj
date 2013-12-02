@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E098C0A184C42A3002679B3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E098C09184C42A3002679B3 /* QuartzCore.framework */; };
 		7E1294AB183C33A300570C8B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1294AA183C33A300570C8B /* UIKit.framework */; };
 		7E1294AD183C33A300570C8B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1294AC183C33A300570C8B /* Foundation.framework */; };
 		7E1294AF183C33A300570C8B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1294AE183C33A300570C8B /* CoreGraphics.framework */; };
@@ -50,6 +51,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7E098C09184C42A3002679B3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7E1294A7183C33A300570C8B /* movieTrip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = movieTrip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E1294AA183C33A300570C8B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7E1294AC183C33A300570C8B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -121,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E098C0A184C42A3002679B3 /* QuartzCore.framework in Frameworks */,
 				7E37B88A1844303100C3643A /* Security.framework in Frameworks */,
 				7E37B8881844302800C3643A /* SystemConfiguration.framework in Frameworks */,
 				7E1294E2183C38AA00570C8B /* MapKit.framework in Frameworks */,
@@ -136,6 +139,7 @@
 		7E12949E183C33A300570C8B = {
 			isa = PBXGroup;
 			children = (
+				7E098C09184C42A3002679B3 /* QuartzCore.framework */,
 				7E37B8891844303100C3643A /* Security.framework */,
 				7E37B8871844302800C3643A /* SystemConfiguration.framework */,
 				7E37B84D18442EFC00C3643A /* AFNetworking */,

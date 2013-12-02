@@ -65,7 +65,9 @@
             <objects>
                 <navigationController definesPresentationContext="YES" id="lqA-Uy-pOo" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Nearby" id="F1c-zR-KVc"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OPN-oB-6xa">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="OPN-oB-6xa">
+                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -116,7 +118,9 @@
             <objects>
                 <navigationController definesPresentationContext="YES" id="zez-0q-VQO" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Search" id="xMw-G7-uYk"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zwM-qk-YKx">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="zwM-qk-YKx">
+                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -285,7 +289,9 @@
             <objects>
                 <navigationController definesPresentationContext="YES" id="vJA-hY-Dac" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Saved" id="Xm6-WI-cHL"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cQN-6s-IZW">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="cQN-6s-IZW">
+                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -327,7 +333,9 @@
             <objects>
                 <navigationController definesPresentationContext="YES" id="LIn-xW-HDF" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Me" id="0qo-6l-q9C"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="suC-SV-hZK">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="suC-SV-hZK">
+                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
