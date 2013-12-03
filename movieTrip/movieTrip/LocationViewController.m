@@ -9,6 +9,7 @@
 #import "LocationViewController.h"
 #import "MovieViewController.h"
 #import "DestToSaveViewController.h"
+#import "CheckinViewController.h"
 #import "AFNetworking.h"
 #import <QuartzCore/QuartzCore.h>
 #import <MapKit/MapKit.h>
@@ -64,6 +65,14 @@ static CGFloat buttonHeight = 40.0;
 
 - (void)clickCheckin:(id)sender {
     NSLog(@"checkin");
+    
+    CheckinViewController *checkinVC = [[CheckinViewController alloc] initWithNibName:@"CheckinViewController" bundle:nil];
+    CLLocationCoordinate2D location;
+    location.latitude = [locationLati doubleValue];
+    location.longitude = [locationLong doubleValue];
+    checkinVC.location = location;
+    [self.navigationController presentViewController:checkinVC animated:YES completion:nil];
+    
     // If a user has *never* logged into your app, request one of
     // "email", "user_location", or "user_birthday". If you do not
     // pass in any permissions, "email" permissions will be automatically
