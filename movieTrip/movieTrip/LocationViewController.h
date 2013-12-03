@@ -7,14 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
-@interface LocationViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface LocationViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate, MKAnnotation> {
     UIImageView *pictureView;
     UIView *titleView;
+    MKMapView *mapView;
     UIView *buttonView;
     UITableView *movieTableView;
     __weak IBOutlet UIScrollView *scrollView;
     __weak IBOutlet UIActivityIndicatorView *indicator;
+    
     
     // Dynamic size
     CGFloat windowWidth;

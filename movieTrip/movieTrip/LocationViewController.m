@@ -11,6 +11,7 @@
 #import "DestToSaveViewController.h"
 #import "AFNetworking.h"
 #import <QuartzCore/QuartzCore.h>
+#import <MapKit/MapKit.h>
 #import "FacebookSDK.framework/Headers/FacebookSDK.h"
 
 static NSString *const BaseURLString = @"http://people.ischool.berkeley.edu/~jthuang/i298/";
@@ -21,6 +22,7 @@ static CGFloat marginTop = 20.0;
 // UIView
 static CGFloat pictureViewHeight = 200.0;
 static CGFloat titleViewHeight = 60.0;
+static CGFloat mapViewHeight = 100.0;
 static CGFloat buttonViewHeight = 80.0;
 
 // Label
@@ -149,7 +151,7 @@ static CGFloat buttonHeight = 40.0;
     locationTitle = [dict objectForKey:@"Description"];
     locationLati = [dict objectForKey:@"Latitude"];
     locationLong = [dict objectForKey:@"Longitude"];
-    locationPicture = [dict objectForKey:@"Image"];
+    locationPicture = [dict objectForKey:@"Photo_URL"];
     locationMovies = (NSMutableArray*)[dict objectForKey:@"Movies"];
     
     [self setViews];
@@ -162,7 +164,7 @@ static CGFloat buttonHeight = 40.0;
     movieTableViewHeight = [locationMovies count]*44+60;
     
     // Initiate scroll view
-    [scrollView setContentSize:CGSizeMake(windowWidth, pictureViewHeight+titleViewHeight+buttonViewHeight+movieTableViewHeight)];
+    [scrollView setContentSize:CGSizeMake(windowWidth, pictureViewHeight+titleViewHeight+buttonViewHeight+mapViewHeight+movieTableViewHeight)];
     [scrollView setBackgroundColor:[UIColor colorWithRed:0.98 green:0.98 blue:0.98 alpha:1.0]];
     
     // Initiate UIViews
@@ -177,13 +179,25 @@ static CGFloat buttonHeight = 40.0;
     titleView = [[UIView alloc] initWithFrame:CGRectMake(0, pictureViewHeight, windowWidth, titleViewHeight)];
     [titleView setBackgroundColor:[UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1.0]];
 
-    buttonView = [[UIView alloc] initWithFrame:CGRectMake(0, pictureViewHeight+titleViewHeight, windowWidth, buttonViewHeight)];
+    mapView = [[MKMapView alloc] initWithFrame:CGRectMake(marginLeft/2, pictureViewHeight+titleViewHeight, windowWidth-marginLeft, mapViewHeight)];
+    [mapView.layer setCornerRadius:5.0];
+    [mapView setDelegate:self];
+    CLLocationCoordinate2D location;
+    location.latitude = [locationLati doubleValue];
+    location.longitude = [locationLong doubleValue];
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location, 100, 100);
+    [mapView setRegion:[mapView regionThatFits:region] animated:NO];
+    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+    point.coordinate = location;
+    [mapView addAnnotation:point];
+    
+    buttonView = [[UIView alloc] initWithFrame:CGRectMake(0, pictureViewHeight+mapViewHeight+titleViewHeight, windowWidth, buttonViewHeight)];
     [buttonView setBackgroundColor:[UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1.0]];
     UIView *buttonBorder = [[UIView alloc] initWithFrame:CGRectMake(0, buttonViewHeight-1, windowWidth, 1)];
     [buttonBorder setBackgroundColor:[UIColor colorWithRed:0.85 green:0.85 blue:0.85 alpha:1.0]];
     [buttonView addSubview:buttonBorder];
     
-    movieTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, pictureViewHeight+titleViewHeight+buttonViewHeight, windowWidth, movieTableViewHeight) style:UITableViewStyleGrouped];
+    movieTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, pictureViewHeight+titleViewHeight+mapViewHeight+buttonViewHeight, windowWidth, movieTableViewHeight) style:UITableViewStyleGrouped];
     [movieTableView setBackgroundView:nil];
     [movieTableView setBackgroundColor:[UIColor colorWithRed:0.98 green:0.98 blue:0.98 alpha:1.0]];
     
@@ -225,6 +239,7 @@ static CGFloat buttonHeight = 40.0;
     // add the UIViews to scrollView
     [scrollView addSubview:pictureView];
     [scrollView addSubview:titleView];
+    [scrollView addSubview:mapView];
     [scrollView addSubview:buttonView];
     [scrollView addSubview:movieTableView];
     
