@@ -64,7 +64,7 @@
         <scene sceneID="eg4-XR-lE6">
             <objects>
                 <navigationController definesPresentationContext="YES" id="lqA-Uy-pOo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Nearby" id="F1c-zR-KVc"/>
+                    <tabBarItem key="tabBarItem" title="Nearby" image="nearby.png" id="F1c-zR-KVc"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="OPN-oB-6xa">
@@ -87,7 +87,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" barStyle="blackOpaque" id="wvN-u3-i7v">
+                        <searchBar key="tableHeaderView" contentMode="redraw" barStyle="blackOpaque" placeholder="Search for Movies or Locations" id="wvN-u3-i7v">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
@@ -114,11 +114,11 @@
             </objects>
             <point key="canvasLocation" x="1185" y="-35"/>
         </scene>
-        <!--Navigation Controller - Search-->
+        <!--Navigation Controller-->
         <scene sceneID="OkH-pG-NHf">
             <objects>
                 <navigationController definesPresentationContext="YES" id="zez-0q-VQO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" id="xMw-G7-uYk"/>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="xMw-G7-uYk"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="zwM-qk-YKx">
@@ -286,11 +286,11 @@
             </objects>
             <point key="canvasLocation" x="2024" y="683"/>
         </scene>
-        <!--Navigation Controller - Saved-->
+        <!--Navigation Controller-->
         <scene sceneID="XQc-kl-8dt">
             <objects>
                 <navigationController definesPresentationContext="YES" id="vJA-hY-Dac" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Saved" id="Xm6-WI-cHL"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="Xm6-WI-cHL"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="cQN-6s-IZW">
@@ -306,28 +306,64 @@
             <point key="canvasLocation" x="653" y="683"/>
         </scene>
         <!--Me View Controller - Me-->
-        <scene sceneID="ZZ2-K1-j1m">
+        <scene sceneID="XGb-CI-yA9">
             <objects>
-                <tableViewController id="e9e-PJ-SjT" customClass="MeViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fFr-4L-UVP">
+                <viewController id="qNX-aV-6q1" customClass="MeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ffw-sv-M7m">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="pHx-ev-fzF">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </tableViewCell>
-                        </prototypes>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Me" id="AnT-ue-qC2"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vpz-qN-qx1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="me.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="tMg-3S-TrV">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="96" id="Mxf-zt-o83"/>
+                                    <constraint firstAttribute="width" constant="96" id="eBi-UT-zvK"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="nOK-Ie-3vU">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="309" id="hbK-hm-IsH"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="qNX-aV-6q1" id="bMi-W5-BaC"/>
+                                    <outlet property="delegate" destination="qNX-aV-6q1" id="ZYG-6m-xbX"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Kate Hsiao" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYR-T4-hjW">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="165" id="lk1-ds-h7b"/>
+                                    <constraint firstAttribute="height" constant="21" id="vDl-xv-YLJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Berkeley, CA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AiR-AY-iXR">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="i44-DB-F3V"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xYR-T4-hjW" firstAttribute="top" secondItem="Ffw-sv-M7m" secondAttribute="top" constant="25" id="0MM-8k-Agk"/>
+                            <constraint firstItem="AiR-AY-iXR" firstAttribute="leading" secondItem="xYR-T4-hjW" secondAttribute="leading" type="default" id="CZ6-ha-IVo"/>
+                            <constraint firstItem="nOK-Ie-3vU" firstAttribute="bottom" secondItem="Ffw-sv-M7m" secondAttribute="bottom" type="default" id="Rug-FO-pmR"/>
+                            <constraint firstAttribute="trailing" secondItem="xYR-T4-hjW" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Uyv-CS-klA"/>
+                            <constraint firstAttribute="trailing" secondItem="AiR-AY-iXR" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="WRm-DE-J4E"/>
+                            <constraint firstItem="nOK-Ie-3vU" firstAttribute="leading" secondItem="Ffw-sv-M7m" secondAttribute="leading" type="default" id="dSp-Ok-ipr"/>
+                            <constraint firstItem="tMg-3S-TrV" firstAttribute="leading" secondItem="Ffw-sv-M7m" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="f4S-85-Ydt"/>
+                            <constraint firstItem="tMg-3S-TrV" firstAttribute="top" secondItem="Ffw-sv-M7m" secondAttribute="top" constant="20" symbolic="YES" type="default" id="h22-Nz-YVh"/>
+                            <constraint firstItem="nOK-Ie-3vU" firstAttribute="trailing" secondItem="Ffw-sv-M7m" secondAttribute="trailing" type="default" id="mSL-gZ-zYa"/>
+                            <constraint firstItem="AiR-AY-iXR" firstAttribute="top" secondItem="Ffw-sv-M7m" secondAttribute="top" constant="49" id="tka-Hs-U2t"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Me" id="ZcD-6F-jqg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Mr-ev-Akn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1185" y="1405"/>
         </scene>
@@ -335,7 +371,7 @@
         <scene sceneID="o6o-do-kHg">
             <objects>
                 <navigationController definesPresentationContext="YES" id="LIn-xW-HDF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Me" id="0qo-6l-q9C"/>
+                    <tabBarItem key="tabBarItem" title="Me" image="user.png" id="0qo-6l-q9C"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="suC-SV-hZK">
@@ -343,7 +379,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="e9e-PJ-SjT" kind="relationship" relationship="rootViewController" id="5by-y5-zug"/>
+                        <segue destination="qNX-aV-6q1" kind="relationship" relationship="rootViewController" id="YC2-dz-Tmu"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UUZ-wJ-Qnh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -351,6 +387,11 @@
             <point key="canvasLocation" x="653" y="1405"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="me.jpg" width="516" height="542"/>
+        <image name="nearby.png" width="30" height="30"/>
+        <image name="user.png" width="30" height="30"/>
+    </resources>
     <classes>
         <class className="AddTripViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AddTripViewController.h"/>
@@ -364,6 +405,7 @@
         <class className="DestToSaveViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DestToSaveViewController.h"/>
             <relationships>
+                <relationship kind="action" name="clickCancel:"/>
                 <relationship kind="outlet" name="myTableView" candidateClass="UITableView"/>
             </relationships>
         </class>
@@ -373,7 +415,7 @@
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
             </relationships>
         </class>
-        <class className="MeViewController" superclassName="UITableViewController">
+        <class className="MeViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MeViewController.h"/>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">

@@ -41,10 +41,12 @@ static NSString *const BaseURLString = @"http://people.ischool.berkeley.edu/~jth
     // Get user current location
     location = [[[self.mapView userLocation] location] coordinate];
 //    CLLocationCoordinate2D location = [[[self.mapView userLocation] location] coordinate];
-    NSLog(@"Location found from Map: %f %f",location.latitude,location.longitude);
+//    NSLog(@"Location found from Map: %f %f",location.latitude,location.longitude);
 //    CLLocationCoordinate2D location;
 //    location.latitude = 35.026267;
 //    location.longitude = 135.751904;
+    location.latitude = 37.871575;
+    location.longitude = -122.258287;
     
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location, 1000, 1000);
     [self.mapView setRegion:[self.mapView regionThatFits:region] animated:NO];

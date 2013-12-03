@@ -2,12 +2,12 @@
 //  MeViewController.h
 //  movieTrip
 //
-//  Created by Kate Hsiao on 11/19/13.
+//  Created by Kate Hsiao on 12/2/13.
 //  Copyright (c) 2013 Kate Hsiao. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface MeViewController : UITableViewController
+@interface MeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end

@@ -2,7 +2,7 @@
 //  MeViewController.m
 //  movieTrip
 //
-//  Created by Kate Hsiao on 11/19/13.
+//  Created by Kate Hsiao on 12/2/13.
 //  Copyright (c) 2013 Kate Hsiao. All rights reserved.
 //
 
@@ -35,17 +35,15 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-#pragma mark - Section
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 2;
 }
 
 #pragma mark - Table cell
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    if (section==0) return 3;
+    else return 1;
 }
 
 
@@ -56,7 +54,15 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    cell.textLabel.text = @"Me";
+    if (indexPath.section==0) {
+        if (indexPath.row==0) cell.textLabel.text = @"Photos";
+        else if (indexPath.row==1) cell.textLabel.text = @"Badges";
+        else if (indexPath.row==2) cell.textLabel.text = @"Notifications";
+        else cell.textLabel.text = @"";
+    }
+    else if (indexPath.section==1) {
+        if (indexPath.row==0) cell.textLabel.text = @"Friends";
+    }
     
     return cell;
 }
@@ -64,5 +70,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+
 
 @end

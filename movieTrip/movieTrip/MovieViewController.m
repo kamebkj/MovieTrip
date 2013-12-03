@@ -80,7 +80,7 @@ static CGFloat buttonHeight = 40.0;
 
 - (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if ([movieLocations count]>0) return @"Shooting Locations";
-    else return @"No shooting locations";
+    else return @"Shooting locations not available";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

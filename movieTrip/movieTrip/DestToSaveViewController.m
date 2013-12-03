@@ -70,6 +70,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [self saveToPlist:indexPath.row];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
