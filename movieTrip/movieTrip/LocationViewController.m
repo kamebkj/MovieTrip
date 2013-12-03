@@ -149,7 +149,7 @@ static CGFloat buttonHeight = 40.0;
     locationTitle = [dict objectForKey:@"Description"];
     locationLati = [dict objectForKey:@"Latitude"];
     locationLong = [dict objectForKey:@"Longitude"];
-//    locationPicture = [dict objectForKey:@"Image"];
+    locationPicture = [dict objectForKey:@"Image"];
     locationMovies = (NSMutableArray*)[dict objectForKey:@"Movies"];
     
     [self setViews];
@@ -167,7 +167,12 @@ static CGFloat buttonHeight = 40.0;
     
     // Initiate UIViews
     pictureView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, windowWidth, pictureViewHeight)];
-    [pictureView setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"https://mw2.google.com/mw-panoramio/photos/medium/17769178.jpg"]]]];
+    if ([locationPicture length]==0) {
+        [pictureView setImage:[UIImage imageNamed:@"location-placeholder.png"]];
+    }
+    else {
+        [pictureView setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:locationPicture]]]];
+    }
     
     titleView = [[UIView alloc] initWithFrame:CGRectMake(0, pictureViewHeight, windowWidth, titleViewHeight)];
     [titleView setBackgroundColor:[UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1.0]];

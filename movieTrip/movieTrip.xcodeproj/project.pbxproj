@@ -51,6 +51,11 @@
 		7E74A50F184456D4008A13B1 /* savedList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E74A50E184456D4008A13B1 /* savedList.plist */; };
 		7E74A51518445922008A13B1 /* SavedListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E74A51418445922008A13B1 /* SavedListViewController.m */; };
 		7E74A518184466D0008A13B1 /* AddTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E74A517184466D0008A13B1 /* AddTripViewController.m */; };
+		7E7C304F184DB0CC0066B326 /* location-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7C304D184DB0CC0066B326 /* location-placeholder.png */; };
+		7E7C3050184DB0CC0066B326 /* location-placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7C304E184DB0CC0066B326 /* location-placeholder@2x.png */; };
+		7E7C3053184DB0EA0066B326 /* movie-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7C3051184DB0EA0066B326 /* movie-placeholder.png */; };
+		7E7C3054184DB0EA0066B326 /* movie-placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7C3052184DB0EA0066B326 /* movie-placeholder@2x.png */; };
+		7E7C3056184DB2C90066B326 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7C3055184DB2C90066B326 /* icon.png */; };
 		7EAA5F931845502500036F9F /* MyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA5F921845502500036F9F /* MyAnnotation.m */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +127,11 @@
 		7E74A51418445922008A13B1 /* SavedListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SavedListViewController.m; path = ../SavedListViewController.m; sourceTree = "<group>"; };
 		7E74A516184466D0008A13B1 /* AddTripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTripViewController.h; sourceTree = "<group>"; };
 		7E74A517184466D0008A13B1 /* AddTripViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTripViewController.m; sourceTree = "<group>"; };
+		7E7C304D184DB0CC0066B326 /* location-placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location-placeholder.png"; sourceTree = "<group>"; };
+		7E7C304E184DB0CC0066B326 /* location-placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location-placeholder@2x.png"; sourceTree = "<group>"; };
+		7E7C3051184DB0EA0066B326 /* movie-placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "movie-placeholder.png"; sourceTree = "<group>"; };
+		7E7C3052184DB0EA0066B326 /* movie-placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "movie-placeholder@2x.png"; sourceTree = "<group>"; };
+		7E7C3055184DB2C90066B326 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		7EAA5F911845502500036F9F /* MyAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAnnotation.h; sourceTree = "<group>"; };
 		7EAA5F921845502500036F9F /* MyAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnnotation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -194,6 +204,10 @@
 				7E098C2C184D6CAF002679B3 /* nearby@2x.png */,
 				7E098C2F184D6DDA002679B3 /* user.png */,
 				7E098C30184D6DDA002679B3 /* user@2x.png */,
+				7E7C3051184DB0EA0066B326 /* movie-placeholder.png */,
+				7E7C3052184DB0EA0066B326 /* movie-placeholder@2x.png */,
+				7E7C304D184DB0CC0066B326 /* location-placeholder.png */,
+				7E7C304E184DB0CC0066B326 /* location-placeholder@2x.png */,
 				7E1294B1183C33A300570C8B /* Supporting Files */,
 			);
 			path = movieTrip;
@@ -202,6 +216,7 @@
 		7E1294B1183C33A300570C8B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7E7C3055184DB2C90066B326 /* icon.png */,
 				7E098C27184D51F9002679B3 /* me.jpg */,
 				7E1294EB183C430700570C8B /* campanile.jpg */,
 				7E1294B2183C33A300570C8B /* movieTrip-Info.plist */,
@@ -303,9 +318,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7E1294A6183C33A300570C8B /* movieTrip */ = {
+		7E1294A6183C33A300570C8B /* MovieTrip */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7E1294D5183C33A300570C8B /* Build configuration list for PBXNativeTarget "movieTrip" */;
+			buildConfigurationList = 7E1294D5183C33A300570C8B /* Build configuration list for PBXNativeTarget "MovieTrip" */;
 			buildPhases = (
 				7E1294A3183C33A300570C8B /* Sources */,
 				7E1294A4183C33A300570C8B /* Frameworks */,
@@ -315,7 +330,7 @@
 			);
 			dependencies = (
 			);
-			name = movieTrip;
+			name = MovieTrip;
 			productName = movieTrip;
 			productReference = 7E1294A7183C33A300570C8B /* movieTrip.app */;
 			productType = "com.apple.product-type.application";
@@ -341,7 +356,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7E1294A6183C33A300570C8B /* movieTrip */,
+				7E1294A6183C33A300570C8B /* MovieTrip */,
 			);
 		};
 /* End PBXProject section */
@@ -367,6 +382,11 @@
 				7E098C2E184D6CB1002679B3 /* nearby@2x.png in Resources */,
 				7E098C31184D6DDA002679B3 /* user.png in Resources */,
 				7E098C32184D6DDA002679B3 /* user@2x.png in Resources */,
+				7E7C304F184DB0CC0066B326 /* location-placeholder.png in Resources */,
+				7E7C3050184DB0CC0066B326 /* location-placeholder@2x.png in Resources */,
+				7E7C3053184DB0EA0066B326 /* movie-placeholder.png in Resources */,
+				7E7C3054184DB0EA0066B326 /* movie-placeholder@2x.png in Resources */,
+				7E7C3056184DB2C90066B326 /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,7 +543,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7E1294D5183C33A300570C8B /* Build configuration list for PBXNativeTarget "movieTrip" */ = {
+		7E1294D5183C33A300570C8B /* Build configuration list for PBXNativeTarget "MovieTrip" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7E1294D6183C33A300570C8B /* Debug */,
